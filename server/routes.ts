@@ -17,8 +17,9 @@ import * as tf from "@tensorflow/tfjs";
 // Initialize Web3 for blockchain integration
 import Web3 from "web3";
 
-// Simulated web3 instance for blockchain operations
-const web3 = new Web3("http://localhost:8545"); // This would be a real blockchain node in production
+// Simulated web3 instance for blockchain operations - using HTTP provider with ganache for development
+// For local dev without a blockchain node, use a dummy provider that still lets us generate hashes
+const web3 = new Web3(); // We'll use web3 utilities without connecting to a blockchain
 
 export async function registerRoutes(app: Express): Promise<Server> {
   const router = express.Router();
